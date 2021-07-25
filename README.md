@@ -1,1 +1,14 @@
-# SAdemosource
+# MongoDB Demo
+
+## SaaS Application Demo
+Allegro demo is consist of middleware and web UI.
+Middleware (API server) is running on NodeJS with mongoose modules (node_server)
+Web UI is based on Vue.js (allegro-saas)
+![Architecture](/images/image1.png)
+
+## One source multi use Demo
+This is chatbot demo which is used Oracle Digital Assistant and Slack.
+Chatbot is working with existing middleware (API server - node_server)
+Chatbot source is on Allegro-bot
+Integration source between chatbot and API server is in digitalAssistant
+
