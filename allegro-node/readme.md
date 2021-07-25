@@ -1,15 +1,18 @@
 ## Allegro Web application API Server
 
 ### Feature and components
-This API server is running on NodeJS and It provide CRUD function on Atlas MongoDB.   
-To run this application server you need to have Atlas MongoDB or install mongoDB on your server.   
-Here is running Atlas MongoDB   
-https://www.mongodb.com/cloud/atlas/register
+This API server is running on NodeJS and it provides CRUD function on document database.   
+Therefore, NodeJS and document database are required to run this API Server. There is option to use document database, You can choose MongoDB on-premise or Atlas MongoDB. In this demo I will use Atlas MongoDB that is managed database cloud service. So, it is easy to provision database instance. Here is how to provision the Atlas MongoDB  
+https://www.mongodb.com/cloud/atlas/register   
 
-
+In terms of NodeJS, you can download from nodejs site.
+https://nodejs.org/en/download/ 
+I recommend using the latest version (+14.17.0). If you install NodeJS, npm (Node Package Manager) is also included in the package.   
+The API server doesn't have authentication and authorization feature to protect API. If you want to protect the API end-point, API gateway can be deployed in front of the API-server.  
 
 ### Atlas MongoDB
-Login to Atlas and create cluster (You can create 2 clusters for free)   
+If you have Atlas account, you can create MongoDB cluster.   
+Login to Atlas web console and create cluster (You can create 2 clusters for free)   
 After creation of cluster, you can get the connection link.   
 ![Atlas Connection](/images/allegro-node/image3.png)   
 
@@ -64,12 +67,30 @@ Select collection ship that you created, and click insert document button.
 ### NPM 
 Clone the allegro-node and install modules
 Here is the git URL   
-https://github.com/xers989/SAdemosource.git
+https://github.com/xers989/SAdemosource.git    
 
+Here is directoris and files structure. 
 ``` bash
-$ cd allegro-node
-$ npm i express morgan dotenv nunjucks mongoose cors
-$ npm i -D nodemon
+allegro-node $ tree
+.
+├── app.js
+├── package.json
+├── readme.md
+├── routes
+│   ├── aggregation.js
+│   ├── cargoships.js
+│   └── index.js
+└── schemas
+    ├── cargoship.js
+    └── index.js
+```
+app.js is main node script and in routes folder, there are express router node scripts.
+MongoDB connection information is in /schemas/index.js and /schemas/cargoship.js has definition about collection of ship.   
+
+To run the the API server, you need to install required modules.  
+``` bash
+allegro-node $ npm i express morgan dotenv nunjucks mongoose cors
+allegro-node $ npm i -D nodemon
 ```
 If you don't have nodeJS, you can get NodeJS following link   
 https://nodejs.org/en/download/   
@@ -79,12 +100,12 @@ If you install NodeJS, NPM is included on NodeJS.
 ### Setting Atlas Connection
 To set up connection, you need to create .env file first.   
 The .env file has to be created under allegro-node directory.   
-Don't upload .env file to github. It has password to connect    
+Don't upload .env file to github. It has password to connect.      
 create file .env    
 You can get all information from your atlas connection string
 ``` bash
-$ touch .env
-$ vi .env
+allegro-node $ touch .env
+allegro-node $ vi .env
 PASSWORD=<<YOUR PASSWORD>>
 ATLAS=<<YOUR Atlas connection string>>
 USERID=<<YOUR Atlas DB User>>
@@ -99,7 +120,7 @@ USERID is johndoe
 Now, it's time to run the server
 You can run the application in allegro-node diretory (Where is package.json exists)
 ``` bash
-$ npm start
+allegro-node $ npm start
 % npm start    
 
 > vessal-node@1.0.0 start /*****/allegro-node
@@ -197,12 +218,12 @@ There is PM2 module which is control npm.
 That module has to be install in global.   
 Here is install command. 
 ```bash  
-$ sudo npm install pm2 -g
+allegro-node $ sudo npm install pm2 -g
 ```
 
 Running the node server in backgroud   
 ```bash
-$ pm2 --name <<background-process name>> start npm -- <<npm script>>
+allegro-node $ pm2 --name <<background-process name>> start npm -- <<npm script>>
 ```
 ![Access database User](/images/allegro-node/image13.png) 
 
