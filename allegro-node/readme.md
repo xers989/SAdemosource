@@ -71,6 +71,7 @@ $ touch .env
 $ vi .env
 PASSWORD=<<YOUR PASSWORD>>
 ATLAS=<<YOUR Atlas connection string>>
+USER=<<YOUR Atlas DB User>>
 ```
 The connection string is not full IP address. 
 Copy full domain name only (From '@' to before '/')
