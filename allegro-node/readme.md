@@ -20,36 +20,37 @@ Now you can connection URL, so copy the address and close the window.
 ![Atlas Connection](/images/image5.png)   
 
 ### Atlas Access
-To create database user, go to atlas console page and click Database Access.
-Click + Add new database user.
+To create database user, go to atlas console page and click Database Access.   
+Click + Add new database user.   
 ![Access database User](/images/image6.png)   
-Select Password as Authentication Method, and then set up the password.
-User Privileges is need to read and write to any database.
+Select Password as Authentication Method, and then set up the password.   
+User Privileges is need to read and write to any database.   
 
-To connect the database, you have to also add IP address in Network Access.
-Click Network Access and add IP Address.
-![Access database User](/images/image7.png) 
-You have to add the server IP address (allegro-node server IP address).
-This is not private IP, if you don't know your public IP address, open google and type "my ip".
-Type the IP address on Access List Entry. You can use CIDR format.
-![Access database User](/images/image8.png) 
+
+To connect the database, you have to also add IP address in Network Access.   
+Click Network Access and add IP Address.   
+![Access database User](/images/image7.png)  
+You have to add the server IP address (allegro-node server IP address).   
+This is not private IP, if you don't know your public IP address, open google and type "my ip".   
+Type the IP address on Access List Entry. You can use CIDR format.   
+![Access database User](/images/image8.png)  
 
 
 ### Create Database and Insert Sample Data on collection
-Log in to Atlas console and create database.
-To create Database, click Databases and click + Create Database.
-![Access database User](/images/image9.png) 
+Log in to Atlas console and create database.   
+To create Database, click Databases and click + Create Database.   
+![Access database User](/images/image9.png)   
 
-Next is create collection in the database.
-Select the database you created, click "+" button on the database.
-Set Collection name as ship.
-![Access database User](/images/image10.png) 
+Next is create collection in the database.   
+Select the database you created, click "+" button on the database.   
+Set Collection name as ship.   
+![Access database User](/images/image10.png)   
 
-Insert sample Document
-There are two tenant Hanjin and HMM
-Each tenant has 3 ship information.
-Select collection ship that you created, and click insert document button.
-![Access database User](/images/image11.png) 
+Insert sample Document   
+There are two tenant Hanjin and HMM.  
+Each tenant has 3 ship information.   
+Select collection ship that you created, and click insert document button.   
+![Access database User](/images/image11.png)  
 
 ```JSON
 {"tenant":"Hanjin","ship":"HJ-1","type":"Container ships","weight":{"size": 90000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":560,"fullyloaded":4},"capacity":{"average":22000}}
@@ -62,19 +63,25 @@ Select collection ship that you created, and click insert document button.
 
 ### NPM 
 Clone the allegro-node and install modules
+Here is the git URL   
+https://github.com/xers989/SAdemosource.git
+
 ``` bash
+$ cd allegro-node
 $ npm i express morgan dotenv nunjucks mongoose cors
 $ npm i -D nodemon
 ```
-If you don't have nodeJS, you can get NodeJS following link
+If you don't have nodeJS, you can get NodeJS following link   
 https://nodejs.org/en/download/
-I tested this on Node 14.17.0 and NPM 6.14.13
-If you install NodeJS, NPM is included on NodeJS.
+I tested this on Node 14.17.0 and NPM 6.14.13   
+If you install NodeJS, NPM is included on NodeJS.   
 
 ### Setting Atlas Connection
-To set up connection, you need to create .env file first.
-Don't upload .env file to github. It has password to connect 
+To set up connection, you need to create .env file first.   
+The .env file has to be created under allegro-node directory.   
+Don't upload .env file to github. It has password to connect    
 create file .env    
+You can get all information from your atlas connection string
 ``` bash
 $ touch .env
 $ vi .env
@@ -83,13 +90,14 @@ ATLAS=<<YOUR Atlas connection string>>
 USERID=<<YOUR Atlas DB User>>
 DATABASE=<<YOUR Atlas Database Name>>
 ```
-The connection string is not full IP address. 
-Copy full domain name only (From '@' to before '/')
-For example if you connection string is mongodb+srv://johndoe:<password>@allegro.abcd.mongodb.net/atlasdatabase?retryWrites=true&w=majority
-The address is allegro.abcd.mongodb.net
+For example if you connection string is mongodb+srv://johndoe:<password>@allegro.abcd.mongodb.net/atlasdatabase?retryWrites=true&w=majority   
+ATLAS is allegro.abcd.mongodb.net   
+DATABASE is atlasdatabase   
+USERID is johndoe   
 
 ### Start Express API Server
 Now, it's time to run the server
+You can run the application in allegro-node diretory (Where is package.json exists)
 ``` bash
 $ npm start
 % npm start    
@@ -107,18 +115,21 @@ $ npm start
 (Use `node --trace-warnings ...` to show where the warning was created)
 DB connection success
 ```
+If you get DB connection success message, the API server is running successfully.   
+
 
 ### REST API Test
-If you have REST API test tool, use that tool. If you don't have it, use postman.
-Here is download link.
+It time to test the server is running properly. To test the API, you need REST API tool.   
+If you don't have it, use postman.  
+Here is download link.   
 https://www.postman.com/downloads/
 
-Type following address and then click send button to get information.
+Type following address and then click send button to get information.   
 http://localhost:3002/cargoship/Hanjin
 
-![Access database User](/images/image12.png) 
+![Access database User](/images/image12.png)  
 
-Here is curl string to test in Linux OS.
+Here is curl string to test in Linux OS.   
 ```bash
 $ curl --location --request GET 'http://localhost:3002/cargoship/Hanjin' \
 --header 'Content-Type: application/json'
