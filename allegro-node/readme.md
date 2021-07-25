@@ -205,3 +205,18 @@ Running the node server in backgroud
 $ pm2 --name <<background-process name>> start npm -- <<npm script>>
 ```
 ![Access database User](/images/image13.png) 
+
+You can search the process by 
+```bash
+$ pm2 ps
+```
+
+Also to stop the process by
+```bash
+$ pm2 delete <<id>>
+```
+
+If you want to see server log of the Allegro-node, type this.
+```bash
+$ pm2 logs
+```
