@@ -1,0 +1,41 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: allegro-saas
+  namespace: allegro
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: allegro-saas
+  template:
+    metadata:
+      labels:
+        app: allegro-saas
+    spec:
+      containers:
+      - name: allegro-saas
+        image: iad.ocir.io/apackrsct01/allegro/allegro-saas:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+      imagePullSecrets:
+        - name: mysecret
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: allegro-saas
+  namespace: allegro
+  labels:
+    app: allegro-saas
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+    name: http
+  selector:
+    app: allegro-saas
+  type: LoadBalancer
