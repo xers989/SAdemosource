@@ -11,46 +11,46 @@ https://www.mongodb.com/cloud/atlas/register
 ### Atlas MongoDB
 Login to Atlas and create cluster (You can create 2 clusters for free)   
 After creation of cluster, you can get the connection link.   
-![Atlas Connection](/images/image3.png)   
+![Atlas Connection](/images/allegro-node/image3.png)   
 
 Choose a connection method.   
-![Atlas Connection](/images/image4.png)   
+![Atlas Connection](/images/allegro-node/image4.png)   
 
 Now you can connection URL, so copy the address and close the window.   
-![Atlas Connection](/images/image5.png)   
+![Atlas Connection](/images/allegro-node/image5.png)   
 
 ### Atlas Access
 To create database user, go to atlas console page and click Database Access.   
 Click + Add new database user.   
-![Access database User](/images/image6.png)   
+![Access database User](/images/allegro-node/image6.png)   
 Select Password as Authentication Method, and then set up the password.   
 User Privileges is need to read and write to any database.   
 
 
 To connect the database, you have to also add IP address in Network Access.   
 Click Network Access and add IP Address.   
-![Access database User](/images/image7.png)  
+![Access database User](/images/allegro-node/image7.png)  
 You have to add the server IP address (allegro-node server IP address).   
 This is not private IP, if you don't know your public IP address, open google and type "my ip".   
 Type the IP address on Access List Entry. You can use CIDR format.   
-![Access database User](/images/image8.png)  
+![Access database User](/images/allegro-node/image8.png)  
 
 
 ### Create Database and Insert Sample Data on collection
 Log in to Atlas console and create database.   
 To create Database, click Databases and click + Create Database.   
-![Access database User](/images/image9.png)   
+![Access database User](/images/allegro-node/image9.png)   
 
 Next is create collection in the database.   
 Select the database you created, click "+" button on the database.   
 Set Collection name as ship.   
-![Access database User](/images/image10.png)   
+![Access database User](/images/allegro-node/image10.png)   
 
 Insert sample Document   
 There are two tenant Hanjin and HMM.  
 Each tenant has 3 ship information.   
 Select collection ship that you created, and click insert document button.   
-![Access database User](/images/image11.png)  
+![Access database User](/images/allegro-node/image11.png)  
 
 ```JSON
 {"tenant":"Hanjin","ship":"HJ-1","type":"Container ships","weight":{"size": 90000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":560,"fullyloaded":4},"capacity":{"average":22000}}
@@ -128,7 +128,7 @@ Launch Postman and type following address and then click send button to get info
 http://localhost:3002/cargoship/Hanjin  
 That is enquery ship information belongs to Hanjin.   
 
-![Access database User](/images/image12.png)  
+![Access database User](/images/allegro-node/image12.png)  
 
 Here is curl string to test in Linux OS.   
 ```bash
@@ -204,7 +204,7 @@ Running the node server in backgroud
 ```bash
 $ pm2 --name <<background-process name>> start npm -- <<npm script>>
 ```
-![Access database User](/images/image13.png) 
+![Access database User](/images/allegro-node/image13.png) 
 
 You can search the process by 
 ```bash
