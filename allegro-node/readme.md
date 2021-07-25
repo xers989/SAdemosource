@@ -72,7 +72,7 @@ $ npm i express morgan dotenv nunjucks mongoose cors
 $ npm i -D nodemon
 ```
 If you don't have nodeJS, you can get NodeJS following link   
-https://nodejs.org/en/download/
+https://nodejs.org/en/download/   
 I tested this on Node 14.17.0 and NPM 6.14.13   
 If you install NodeJS, NPM is included on NodeJS.   
 
@@ -124,8 +124,9 @@ If you don't have it, use postman.
 Here is download link.   
 https://www.postman.com/downloads/
 
-Type following address and then click send button to get information.   
-http://localhost:3002/cargoship/Hanjin
+Launch Postman and type following address and then click send button to get information.   
+http://localhost:3002/cargoship/Hanjin  
+That is enquery ship information belongs to Hanjin.   
 
 ![Access database User](/images/image12.png)  
 
@@ -135,13 +136,12 @@ $ curl --location --request GET 'http://localhost:3002/cargoship/Hanjin' \
 --header 'Content-Type: application/json'
 [{"weight":{"size":90000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":560,"fullyloaded":4},"capacity":{"average":22000},"_id":"60e6f72c8e726694c050da27","tenant":"Hanjin","ship":"HJ-1","type":"Container ships"},{"weight":{"size":100000,"standard":"ton"},"fuel":{"averagespeed":23,"milespergallon":480,"fullyloaded":3},"capacity":{"combined":55000,"average":28000},"_id":"60e6f72c8e726694c050da28","tenant":"Hanjin","ship":"HJ-2","type":"Container ships"},{"weight":{"size":150000,"standard":"ton"},"fuel":{"averagespeed":18,"milespergallon":350,"fullyloaded":2.5},"capacity":{"combined":85000,"average":48000},"_id":"60e6f72c8e726694c050da29","tenant":"Hanjin","ship":"HJ-3","type":"Container ships"}]
 ```
-All API list is 
-GET
-/cargoship/:tenant/:ship
-ship is option
-POST
-/cargoship
-Body is json document
+All API list is following  
+GET /cargoship/:tenant/:ship   
+ship is option   
+
+POST /cargoship   
+Body is json document   
 Sample is 
 ```json
 {
@@ -163,14 +163,14 @@ Sample is
     "tenant": "Hanjin", "ship": "HJ-4"
 }
 ```
-DELETE
-/cargoship/:tenant/:ship
-tenant and ship are mandetory
-PATH
-/cargoship/:tenant/:ship
-tenant and ship are mandetory
-Body is json document
-Sample is 
+
+DELETE /cargoship/:tenant/:ship   
+tenant and ship are mandetory   
+
+PATH  /cargoship/:tenant/:ship   
+tenant and ship are mandetory   
+Body is json document   
+Sample is  
 ```json
 {
     "type": "Container ships",
@@ -193,12 +193,15 @@ Sample is
 
 
 ### Running Express API Server background 
-There is PM2 module which is control npm.
-That module has to be install in global.
-Here is install command.
+There is PM2 module which is control npm.   
+That module has to be install in global.   
+Here is install command. 
+```bash  
 $ sudo npm install pm2 -g
+```
 
-Running the node server in backgroud
+Running the node server in backgroud   
+```bash
 $ pm2 --name <<background-process name>> start npm -- <<npm script>>
-
+```
 ![Access database User](/images/image13.png) 
