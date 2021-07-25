@@ -54,7 +54,7 @@ Set Collection name as ship.
 ### NPM 
 Clone the allegro-node and install modules
 ``` bash
-$ npm i express, morgan, dotenv, nunjucks, mongoose, cors
+$ npm i express morgan dotenv nunjucks mongoose cors
 $ npm i -D nodemon
 ```
 If you don't have nodeJS, you can get NodeJS following link
@@ -78,5 +78,24 @@ For example if you connection string is mongodb+srv://johndoe:<password>@allegro
 The address is allegro.abcd.mongodb.net
 
 ### Start Express API Server
-Now you can run the
+Now, it's time to run the server
+``` bash
 $ npm start
+% npm start    
+
+> vessal-node@1.0.0 start /*****/allegro-node
+> nodemon app
+
+[nodemon] 2.0.12
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node app.js`
+3002  is waiting to connect
+(node:25642) [MONGODB DRIVER] Warning: Current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor.
+(Use `node --trace-warnings ...` to show where the warning was created)
+DB connection success
+```
+
+### REST API Test
+

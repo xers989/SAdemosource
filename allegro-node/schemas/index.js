@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const password = process.env.PASSWORD;
 const atlas = process.env.ATLAS;
+const userid = process.env.USER;
 //console.log('Process.env.PASSWORD:'+password);
 
 const connect = () => {
@@ -11,7 +12,7 @@ const connect = () => {
         mongoose.set('debug', true);
     }
 
-    mongoose.connect('mongodb+srv://xers9:'+password+'@' + atlas +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
+    mongoose.connect('mongodb+srv://'+ userid + ':'+password+'@' + atlas +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
         if (error) {
             console.log ('DB connection error', error);
         } else {
