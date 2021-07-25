@@ -12,8 +12,10 @@ https://www.mongodb.com/cloud/atlas/register
 Login to Atlas and create cluster (You can create 2 clusters for free)   
 After creation of cluster, you can get the connection link.   
 ![Atlas Connection](/images/image3.png)   
+
 Choose a connection method.   
 ![Atlas Connection](/images/image4.png)   
+
 Now you can connection URL, so copy the address and close the window.   
 ![Atlas Connection](/images/image5.png)   
 
