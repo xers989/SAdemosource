@@ -31,6 +31,26 @@ This is not private IP, if you don't know your public IP address, open google an
 Type the IP address on Access List Entry. You can use CIDR format.
 ![Access database User](/images/image8.png) 
 
+
+### Insert Sample Data on collection
+Insert sample Document
+There are two tenant Hanjin and HMM
+Each tenant has 3 ship information.
+Before insert data, you need to create collection first. That is same as Table in RDB.
+In Atlas console, in databases menu, click + button on the database.
+Set Collection name as ship.
+![Access database User](/images/image9.png) 
+
+```JSON
+{"tenant":"Hanjin","ship":"HJ-1","type":"Container ships","weight":{"size":{"$numberInt":"90000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"25"},"milespergallon":{"$numberInt":"560"},"fullyloaded":{"$numberInt":"4"}},"capacity":{"average":{"$numberInt":"22000"}}}
+{"tenant":"Hanjin","ship":"HJ-2","type":"Container ships","weight":{"size":{"$numberInt":"100000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"23"},"milespergallon":{"$numberInt":"480"},"fullyloaded":{"$numberInt":"3"}},"capacity":{"combined":{"$numberInt":"55000"},"average":{"$numberInt":"28000"}}}
+{"tenant":"Hanjin","ship":"HJ-3","type":"Container ships","weight":{"size":{"$numberInt":"150000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"18"},"milespergallon":{"$numberInt":"350"},"fullyloaded":{"$numberDouble":"2.5"}},"capacity":{"combined":{"$numberInt":"85000"},"average":{"$numberInt":"48000"}}}
+{"tenant":"HMM","ship":"HMM-1","type":"Container ships","weight":{"size":{"$numberInt":"100000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"20"},"milespergallon":{"$numberInt":"576"},"fullyloaded":{"$numberDouble":"4.5"}}}
+{"tenant":"HMM","ship":"HMM-2","type":"General cargo vessels","weight":{"size":{"$numberInt":"50000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"25"},"milespergallon":{"$numberInt":"750"},"fullyloaded":{"$numberDouble":"6.5"}}}
+{"tenant":"HMM","ship":"HMM-3","type":"Dry bulk carriers","weight":{"size":{"$numberInt":"80000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"30"},"milespergallon":{"$numberInt":"830"},"fullyloaded":{"$numberInt":"7"}}}
+```
+
+
 ### NPM 
 Clone the allegro-node and install modules
 ``` bash
@@ -49,10 +69,14 @@ create file .env
 ``` bash
 $ touch .env
 $ vi .env
-PASSWORD=<<YOUR PASSWOR>
+PASSWORD=<<YOUR PASSWORD>>
 ATLAS=<<YOUR Atlas connection string>>
 ```
-
+The connection string is not full IP address. 
+Copy full domain name only (From '@' to before '/')
+For example if you connection string is mongodb+srv://johndoe:<password>@allegro.abcd.mongodb.net/atlasdatabase?retryWrites=true&w=majority
+The address is allegro.abcd.mongodb.net
 
 ### Start Express API Server
+Now you can run the
 $ npm start
