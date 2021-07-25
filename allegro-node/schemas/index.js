@@ -4,15 +4,21 @@ const dotenv = require('dotenv');
 dotenv.config();
 const password = process.env.PASSWORD;
 const atlas = process.env.ATLAS;
-const userid = process.env.USER;
+const userid = process.env.USERID;
+const databasename = process.env.DATABASE;
 //console.log('Process.env.PASSWORD:'+password);
-
+const connectString = 'mongodb+srv://xers9:'+password+'@' + atlas + '/'+ databasename +'?retryWrites=true&w=majority';
+console.log('connectString:'+connectString);
 const connect = () => {
     if (process.env.NODE_ENV !== 'production') {
         mongoose.set('debug', true);
     }
 
-    mongoose.connect('mongodb+srv://'+ userid + ':'+password+'@' + atlas +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
+
+    //mongoose.connect('mongodb+srv://'+ userid + ':'+password+'@' + atlas +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
+    
+    //mongoose.connect('mongodb+srv://xers9:'+password+'@' + atlas + '/'+ databasename +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
+    mongoose.connect('mongodb+srv://'+userid+':'+password+'@' + atlas + '/'+ databasename +'?retryWrites=true&w=majority',{useNewUrlParser: true}, (error) => {
         if (error) {
             console.log ('DB connection error', error);
         } else {
