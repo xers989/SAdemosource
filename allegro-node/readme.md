@@ -16,13 +16,13 @@ The API server doesn't have authentication and authorization feature to protect 
 If you have Atlas account, you can create MongoDB cluster.   
 Login to Atlas web console and create cluster (You can create 2 clusters for free)   
 After creation of cluster, you can get the connection link.   
-![Atlas Connection](/images/allegro-node/image3.png)   
+![Atlas Connection](/images/allegro-node/image3.png){: width="70%" height="70%"}   
 
 Choose a connection method.   
-![Atlas Connection](/images/allegro-node/image4.png)   
+![Atlas Connection](/images/allegro-node/image4.png){: width="90%" height="90%"}   
 
 Now you can connection URL, so copy the address and close the window.   
-![Atlas Connection](/images/allegro-node/image5.png)   
+![Atlas Connection String](/images/allegro-node/image5.png){: width="90%" height="90%"}   
 
 ### Atlas Access
 To create database user, go to atlas console page and click Database Access.   
