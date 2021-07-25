@@ -42,12 +42,12 @@ Set Collection name as ship.
 ![Access database User](/images/image9.png) 
 
 ```JSON
-{"tenant":"Hanjin","ship":"HJ-1","type":"Container ships","weight":{"size":{"$numberInt":"90000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"25"},"milespergallon":{"$numberInt":"560"},"fullyloaded":{"$numberInt":"4"}},"capacity":{"average":{"$numberInt":"22000"}}}
-{"tenant":"Hanjin","ship":"HJ-2","type":"Container ships","weight":{"size":{"$numberInt":"100000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"23"},"milespergallon":{"$numberInt":"480"},"fullyloaded":{"$numberInt":"3"}},"capacity":{"combined":{"$numberInt":"55000"},"average":{"$numberInt":"28000"}}}
-{"tenant":"Hanjin","ship":"HJ-3","type":"Container ships","weight":{"size":{"$numberInt":"150000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"18"},"milespergallon":{"$numberInt":"350"},"fullyloaded":{"$numberDouble":"2.5"}},"capacity":{"combined":{"$numberInt":"85000"},"average":{"$numberInt":"48000"}}}
-{"tenant":"HMM","ship":"HMM-1","type":"Container ships","weight":{"size":{"$numberInt":"100000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"20"},"milespergallon":{"$numberInt":"576"},"fullyloaded":{"$numberDouble":"4.5"}}}
-{"tenant":"HMM","ship":"HMM-2","type":"General cargo vessels","weight":{"size":{"$numberInt":"50000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"25"},"milespergallon":{"$numberInt":"750"},"fullyloaded":{"$numberDouble":"6.5"}}}
-{"tenant":"HMM","ship":"HMM-3","type":"Dry bulk carriers","weight":{"size":{"$numberInt":"80000"},"standard":"ton"},"fuel":{"averagespeed":{"$numberInt":"30"},"milespergallon":{"$numberInt":"830"},"fullyloaded":{"$numberInt":"7"}}}
+{"tenant":"Hanjin","ship":"HJ-1","type":"Container ships","weight":{"size": 90000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":560,"fullyloaded":4},"capacity":{"average":22000}}
+{"tenant":"Hanjin","ship":"HJ-2","type":"Container ships","weight":{"size":100000,"standard":"ton"},"fuel":{"averagespeed":23,"milespergallon":480,"fullyloaded":3},"capacity":{"combined":55000,"average":28000}}
+{"tenant":"Hanjin","ship":"HJ-3","type":"Container ships","weight":{"size":150000,"standard":"ton"},"fuel":{"averagespeed":18,"milespergallon":350,"fullyloaded":2.5},"capacity":{"combined":85000,"average":48000}}
+{"tenant":"HMM","ship":"HMM-1","type":"Container ships","weight":{"size":100000,"standard":"ton"},"fuel":{"averagespeed":20,"milespergallon":576,"fullyloaded":4.5}}
+{"tenant":"HMM","ship":"HMM-2","type":"General cargo vessels","weight":{"size":50000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":750,"fullyloaded":6.5}}
+{"tenant":"HMM","ship":"HMM-3","type":"Dry bulk carriers","weight":{"size":80000,"standard":"ton"},"fuel":{"averagespeed":30,"milespergallon":830,"fullyloaded":7}}
 ```
 
 
