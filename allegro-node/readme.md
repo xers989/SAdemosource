@@ -1,6 +1,6 @@
 ## Allegro Web application API Server
 
-### Architecture
+### Feature and components
 This API server is running on NodeJS and It provide CRUD function on Atlas MongoDB.   
 To run this application server you need to have Atlas MongoDB or install mongoDB on your server.   
 Here is running Atlas MongoDB   
