@@ -144,4 +144,109 @@ There is components menu on left side menu, and click add service
 
 ![Atlas Connection](/images/allegro-bot/image8.png)  
 
+After finising add service. You can see 3 services are add in one project. Final task is turn-on service enabled.
 
+![Atlas Connection](/images/allegro-bot/image9.png)  
+
+
+
+### Testing chatting service in Skill
+Now you can test the digital bot, there is Preview button on top menu.
+Click preview and type question.
+![Atlas Connection](/images/allegro-bot/image10.png)  
+
+In chatting text box, type "Hi, I'm wondering my cargoship list" and enter.
+Then chatbot will respond your question.
+![Atlas Connection](/images/allegro-bot/image11.png)  
+If chatbot returns Hanjin tenant cargoship list, it works properly.'
+
+
+
+### Create Slack Application
+Final task is adding conversation channel, channel can be slack, facebook messenger or MS teams.
+Here is the way to connect slack, to complete this task you need to have administration role of the slack.
+If you want to create new slack workspace, here is link to do that.
+https://slack.com/create#email
+
+In the slack, visit the slack api page with your account.
+https://api.slack.com/apps
+
+Click create app button 
+![Atlas Connection](/images/allegro-bot/image12.png)  
+
+Choose From scratch and type name of the chat-bot
+![Atlas Connection](/images/allegro-bot/image13.png)  
+
+Appname as allegro (if you have preferred name you can use) and pick a workspace name.
+![Atlas Connection](/images/allegro-bot/image14.png)  
+
+When it is created, the page is forward to basic information of the building Apps. On left menu select OAuth and Permissions.
+There is Scopes section and input following information.
+
+```text
+Bot Token Scopes
+chat:write
+im:history
+users:read
+```
+
+```text
+User Token Scopes
+files: write
+```
+![Atlas Connection](/images/allegro-bot/image15.png)  
+
+Go to OAuth Tokens for Your Workspace section, there is intall to workspace button.
+![Atlas Connection](/images/allegro-bot/image16.png)  
+Click Allow button
+![Atlas Connection](/images/allegro-bot/image17.png)  
+
+After creation process, You can get credential information App Credential section from Basic information
+![Atlas Connection](/images/allegro-bot/image18.png)  
+
+
+### Create Slack Channel
+Login into Digital Assitant and Channels under Develoment menu.
+![Atlas Connection](/images/allegro-bot/image19.png)  
+
+Select Add Channel button and type slackAllegro as name and pick slack as Channel Type.
+And then copy client ID and Client Secret from slack.
+![Atlas Connection](/images/allegro-bot/image20.png)  
+
+After create the channel enable the Channel Enabled and select Route To as skill what you created.
+![Atlas Connection](/images/allegro-bot/image21.png)  
+
+Then copy the Webhook URL in the page and paste it Redirect URLs section in OAuth & Permission page.
+The Webhook URL
+![Atlas Connection](/images/allegro-bot/image22.png)  
+Redirect URL
+![Atlas Connection](/images/allegro-bot/image23.png)  
+Then click Save URLs
+
+In the left menu, there is App Home and Your App's Presence in Slack section, turn on Always Show My Bot as Online.
+![Atlas Connection](/images/allegro-bot/image24.png)  
+
+Select Event Subscriptions in left menu, set Enable Events to ON and paste Web Hook URL on Request URL field.
+![Atlas Connection](/images/allegro-bot/image25.png)  
+
+Expand subscribe to bot events and click add a bot user;
+Click Add bot user event and add following event.
+
+```text
+message.im
+app_mention
+message.mpim
+message.channels
+```
+
+![Atlas Connection](/images/allegro-bot/image26.png)  
+
+Go to Manage Distribution menu on left, there is add slack button. Click the button
+![Atlas Connection](/images/allegro-bot/image27.png)  
+
+Click Allow button to complete the task.
+![Atlas Connection](/images/allegro-bot/image28.png)  
+
+
+
+In Subscribe to bot events section, click add a bot user
