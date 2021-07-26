@@ -216,6 +216,8 @@ And then copy client ID and Client Secret from slack.
 After create the channel enable the Channel Enabled and select Route To as skill what you created.
 ![Atlas Connection](/images/allegro-bot/image21.png)  
 
+
+### Paste Redirect and complete the config
 Then copy the Webhook URL in the page and paste it Redirect URLs section in OAuth & Permission page.
 The Webhook URL
 ![Atlas Connection](/images/allegro-bot/image22.png)  
@@ -223,8 +225,11 @@ Redirect URL
 ![Atlas Connection](/images/allegro-bot/image23.png)  
 Then click Save URLs
 
-In the left menu, there is App Home and Your App's Presence in Slack section, turn on Always Show My Bot as Online.
+In the left menu, there is App Home and Your App's Presence in Slack section, turn on Always Show My Bot as Online.   
 ![Atlas Connection](/images/allegro-bot/image24.png)  
+
+Also, you need to turn on Message tab in Show section and check "Allow users to send Slash commands and messages from the messages tab"
+![Atlas Connection](/images/allegro-bot/image29.png)  
 
 Select Event Subscriptions in left menu, set Enable Events to ON and paste Web Hook URL on Request URL field.
 ![Atlas Connection](/images/allegro-bot/image25.png)  
@@ -248,5 +253,22 @@ Click Allow button to complete the task.
 ![Atlas Connection](/images/allegro-bot/image28.png)  
 
 
+### Test ChatBot
+Launching slack with your ID, there is allegro-bot is on Apps.
+Click the application to start converstion, then type what you want to know about cargoship.
+Type "Hi I'm wondering about cargoship list.", then allegro-bot will answer the question.
+The cargoship information is list value, so it is displayed vertical card type.
+![Atlas Connection](/images/allegro-bot/image30.png)  
 
-In Subscribe to bot events section, click add a bot user
+Click details of what you want to see in the ship list.
+Then you can see detail information of the selected ship.
+![Atlas Connection](/images/allegro-bot/image31.png)  
+
+If you want to delete the ship information, click delete button.
+![Atlas Connection](/images/allegro-bot/image31.png)  
+
+
+Then, type again to retrieve the cargoship list.
+Type "Cargo ship list, please"
+The selected ship information is not in the result.
+![Atlas Connection](/images/allegro-bot/image32.png)  
