@@ -62,4 +62,86 @@ Click flow Editor and copy flow file (allegro-flow.txt).
 ![Atlas Connection](/images/allegro-bot/image7.png)  
 
 
+### Flow Definition
+Now you need to define conversation flow.
+Click flow Editor and copy flow file (allegro-flow.txt).
+![Atlas Connection](/images/allegro-bot/image7.png)  
+
+### Adding External Service
+Digital Assistant provides feature to integrate with external services. 
+You can implement interface program which is based on Nodejs and project name is digitalAssistant.
+This is the project folders and files information
+```bash
+digitalAssistant $ tree
+.
+├── Dockerfile
+├── README.md
+├── allegro-backend-1.0.0.tgz
+├── components
+│   ├── allegrobackend.js
+│   ├── deleteCargoShip.js
+│   └── getCargoShip.js
+├── docker-compose.yml
+├── main.js
+├── package-lock.json
+├── package.json
+└── spec
+    ├── test.cc.req.json
+    └── test.eh.req.json
+```
+Main function to interface with allegro-node is implemented in components folder.
+There are 3 interfaces and open the files and correct the URL of allegro-node server.
+In this project the allegro-node API domain name is "terraform.cloudiam.site" and 
+the reqURL sets up that URL.
+```javascript 
+var reqURL="http://terraform.cloudiam.site:3002/cargoship/Hanjin";
+```
+Replace the domain name as your IP address of allegro-nod API Server in allegrobackend.js, deleteCargoShip.js, getCargoShip.js.
+
+Goto digitalAssistant directory and package the project by following.
+```bash
+$ npm install -g @oracle/bots-node-sdk
+$ npm install request
+$ npm pack
+
+> allegro-backend@1.0.0 prepack ***/digitalAssistant
+> npm run bots-node-sdk -- pack --dry-run
+
+
+> allegro-backend@1.0.0 bots-node-sdk /***/digitalAssistant
+> bots-node-sdk "pack" "--dry-run"
+
+---------------------------------------------------------------------
+Component Package 'digitalAssistant' is valid!
+---------------------------------------------------------------------
+npm notice 
+npm notice 📦  allegro-backend@1.0.0
+npm notice === Tarball Contents === 
+npm notice 30B   .dockerignore                
+npm notice 86B   Dockerfile                   
+npm notice 1.8kB components/allegrobackend.js 
+npm notice 2.1kB components/deleteCargoShip.js
+npm notice 1.9kB components/getCargoShip.js   
+npm notice 60B   main.js                      
+npm notice 624B  package.json                 
+npm notice 2.6kB README.md                    
+npm notice 221B  docker-compose.yml           
+npm notice === Tarball Details === 
+npm notice name:          allegro-backend                         
+npm notice version:       1.0.0                                   
+npm notice filename:      allegro-backend-1.0.0.tgz               
+npm notice package size:  2.9 kB                                  
+npm notice unpacked size: 9.4 kB                                  
+npm notice shasum:        b1d3210a3d689a5f230c0bbe7509f44a53c9a8d3
+npm notice integrity:     sha512-WBvf4NAvUQGJS[...]mxobhxfGNc3+w==
+npm notice total files:   9                                       
+npm notice 
+allegro-backend-1.0.0.tgz
+
+```
+Go to digital assistant console and select skill what you created.
+There is components menu on left side menu, and click add service
+
+![Atlas Connection](/images/allegro-bot/image8.png)  
+
 
