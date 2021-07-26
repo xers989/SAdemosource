@@ -2,27 +2,27 @@
 
 ### Feature and components
 Oracle Digital Assistant is one of chatbot service that is based on AI. If you have Oracle cloud free account, you can provision digital assistant and use it for 1 month.   
-It collects users chatting through channel, and analyze it and dectect users' intents.
-This demo feature is user can retrieve ship information through slack by chatting with chatbot.
-You can get detail information about Digital Assistant by following URL.
-https://docs.oracle.com/en/cloud/paas/digital-assistant/
+It collects users chatting through channel, and analyze it and dectect users' intents.   
+This demo feature is user can retrieve ship information through slack by chatting with chatbot.   
+You can get detail information about Digital Assistant by following URL.   
+https://docs.oracle.com/en/cloud/paas/digital-assistant/   
 Digital Assistant is kind of chatbot platform, so if you want to use another chatbot service or Python based chatbot, you can use it.
 
 
 ### Provision Digital Assistant
-Login to Oracle Cloud console and click Digital Assistant (Home > Analytics & AI > Digital Assistant)
-![Atlas Connection](/images/allegro-bot/image1.png)   
-Click Create Digital Assistant Instance, type name what you want and select shape as development
-![Atlas Connection](/images/allegro-bot/image2.png)   
-It takes several minutes to provision digital assistant, After provisioning you can click the digital assistant to open digital assitant console.
-![Atlas Connection](/images/allegro-bot/image3.png) 
+Login to Oracle Cloud console and click Digital Assistant (Home > Analytics & AI > Digital Assistant)   
+![Digital Assistant](/images/allegro-bot/image1.png)   
+Click Create Digital Assistant Instance, type name what you want and select shape as development    
+![Digital Assistant](/images/allegro-bot/image2.png)   
+It takes several minutes to provision digital assistant, After provisioning you can click the digital assistant to open digital assitant console.   
+![Digital Assistant](/images/allegro-bot/image3.png)   
 
 ### Create Skill and Intents
-In digital assistant console, select skills under Development > Skills.
-And Create new Skill, then type the name of it (allegro)
-![Atlas Connection](/images/allegro-bot/image4.png)   
-Skills are designed to interact with users and fulfill specific types of tasks, in this demo search ship and delete ship. Each skill helps a user complete a task through a combination of text messages and simple UI elements.
-Now you need to add intents in the skill, click add 2 intents.
+In digital assistant console, select skills under Development > Skills.    
+And Create new Skill, then type the name of it (allegro)    
+![Digital Assistant](/images/allegro-bot/image4.png)    
+Skills are designed to interact with users and fulfill specific types of tasks, in this demo search ship and delete ship. Each skill helps a user complete a task through a combination of text messages and simple UI elements.   
+Now you need to add intents in the skill, click add 2 intents.    
 
 ```text
 ChargoShip intent
@@ -47,30 +47,24 @@ I have to delete the cargo ship
 This is need to be delete
 ```
 
-![Atlas Connection](/images/allegro-bot/image5.png)  
+![Digital Assistant](/images/allegro-bot/image5.png)   
 
-When user conversates, the chatbot detect user's intennt by Utterances.
-For example, if you types "I wonders about my cargoship list", digital assistant recognizes your tentant as CargoShip and proceed the conversation.
+When user conversates, the chatbot detect user's intennt by Utterances.   
+For example, if you types "I wonders about my cargoship list", digital assistant recognizes your tentant as CargoShip and proceed the conversation.   
 
-After type all information, you need to train the skill. Then digital bot can recognize your intent.
-![Atlas Connection](/images/allegro-bot/image6.png)  
-If chatbot can't detect your intention, type the sample utterance in the right skill and then train again.
-
-### Flow Definition
-Now you need to define conversation flow.
-Click flow Editor and copy flow file (allegro-flow.txt).
-![Atlas Connection](/images/allegro-bot/image7.png)  
-
+After type all information, you need to train the skill. Then digital bot can recognize your intent.    
+![Digital Assistant](/images/allegro-bot/image6.png)   
+If chatbot can't detect your intention, type the sample utterance in the right skill and then train again.    
 
 ### Flow Definition
-Now you need to define conversation flow.
-Click flow Editor and copy flow file (allegro-flow.txt).
-![Atlas Connection](/images/allegro-bot/image7.png)  
+Now you need to define conversation flow.   
+Click flow Editor and copy flow file (allegro-flow.txt).   
+![Digital Assistant](/images/allegro-bot/image7.png)   
 
 ### Adding External Service
-Digital Assistant provides feature to integrate with external services. 
-You can implement interface program which is based on Nodejs and project name is digitalAssistant.
-This is the project folders and files information
+Digital Assistant provides feature to integrate with external services.   
+You can implement interface program which is based on Nodejs and project name is digitalAssistant.  
+This is the project folders and files information.  
 ```bash
 digitalAssistant $ tree
 .
@@ -89,16 +83,16 @@ digitalAssistant $ tree
     ├── test.cc.req.json
     └── test.eh.req.json
 ```
-Main function to interface with allegro-node is implemented in components folder.
-There are 3 interfaces and open the files and correct the URL of allegro-node server.
+Main function to interface with allegro-node is implemented in components folder.   
+There are 3 interfaces and open the files and correct the URL of allegro-node server.   
 In this project the allegro-node API domain name is "terraform.cloudiam.site" and 
-the reqURL sets up that URL.
+the reqURL sets up that URL.   
 ```javascript 
 var reqURL="http://terraform.cloudiam.site:3002/cargoship/Hanjin";
 ```
-Replace the domain name as your IP address of allegro-nod API Server in allegrobackend.js, deleteCargoShip.js, getCargoShip.js.
+Replace the domain name as your IP address of allegro-nod API Server in allegrobackend.js, deleteCargoShip.js, getCargoShip.js.    
 
-Goto digitalAssistant directory and package the project by following.
+Goto digitalAssistant directory and package the project by following.   
 ```bash
 $ npm install -g @oracle/bots-node-sdk
 $ npm install request
@@ -139,26 +133,26 @@ npm notice
 allegro-backend-1.0.0.tgz
 
 ```
-Go to digital assistant console and select skill what you created.
-There is components menu on left side menu, and click add service
+Go to digital assistant console and select skill what you created.   
+There is components menu on left side menu, and click add service.   
 
-![Atlas Connection](/images/allegro-bot/image8.png)  
+![Digital Assistant](/images/allegro-bot/image8.png)  
 
-After finising add service. You can see 3 services are add in one project. Final task is turn-on service enabled.
+After finising add service. You can see 3 services are add in one project. Final task is turn-on service enabled.   
 
-![Atlas Connection](/images/allegro-bot/image9.png)  
+![Digital Assistant](/images/allegro-bot/image9.png)  
 
 
 
 ### Testing chatting service in Skill
-Now you can test the digital bot, there is Preview button on top menu.
-Click preview and type question.
-![Atlas Connection](/images/allegro-bot/image10.png)  
+Now you can test the digital bot, there is Preview button on top menu.   
+Click preview and type question.   
+![Digital Assistant](/images/allegro-bot/image10.png)   
 
-In chatting text box, type "Hi, I'm wondering my cargoship list" and enter.
-Then chatbot will respond your question.
-![Atlas Connection](/images/allegro-bot/image11.png)  
-If chatbot returns Hanjin tenant cargoship list, it works properly.'
+In chatting text box, type "Hi, I'm wondering my cargoship list" and enter.   
+Then chatbot will respond your question.   
+![Digital Assistant](/images/allegro-bot/image11.png)   
+If chatbot returns Hanjin tenant cargoship list, it works properly.'  
 
 
 
