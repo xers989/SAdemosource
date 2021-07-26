@@ -265,10 +265,10 @@ Then you can see detail information of the selected ship.
 ![Atlas Connection](/images/allegro-bot/image31.png)  
 
 If you want to delete the ship information, click delete button.
-![Atlas Connection](/images/allegro-bot/image31.png)  
+![Atlas Connection](/images/allegro-bot/image32.png)  
 
 
 Then, type again to retrieve the cargoship list.
 Type "Cargo ship list, please"
 The selected ship information is not in the result.
-![Atlas Connection](/images/allegro-bot/image32.png)  
+![Atlas Connection](/images/allegro-bot/image33.png)  
