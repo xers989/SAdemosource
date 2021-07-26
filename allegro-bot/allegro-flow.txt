@@ -1,0 +1,197 @@
+main: true
+name: Allegro
+context:
+  variables:
+    cargoShips: "map"
+    cargoShip: "string"
+    cargoShipInfo: "string"
+    greeting: "Greeting"
+    answerInfo: "string"
+    iResult: "nlpresult"
+states:
+    
+  intent:
+    component: "System.Intent"
+    properties:
+      variable: "iResult"
+    transitions:
+      actions:
+        DeleteCargoShip: "deleteCargoShip"
+        ChargoShip: "getCargoShip"
+        unresolvedIntent: "resolveGreeting"
+
+  # Go to main flow
+  goMain:
+    component: "System.Output"
+    properties:
+      text: "Hello This is Allegro Chatbot, I can handle Cargo ship information."
+      keepTurn: true
+    transitions: 
+      return: "done"
+      
+  resolveGreeting:
+    component: "System.CommonResponse"
+    properties:
+      processUserMessage: true
+      translate: true
+      metadata:
+        responseItems:
+          - type: "text"
+            text: |-
+                Hello ${profile.firstName?has_content?then(profile.firstName,'')}.
+            separateBubbles: false
+          - type: "text"
+            text: "I can help you about Cargoship management."
+            separateBubbles: false
+          - type: "text"
+            text: "If you want to see Cargoship list type Cargoship list please."
+    transitions:
+      return: "done"
+
+  DeleteCargoShip:
+    component: "allegro.getCargoShips"  
+    properties:
+      cargoShips: "cargoShips"
+    transitions:
+      actions: 
+        success: "successCargoShipState"
+        failure: "failureCargoShipState"
+
+  getCargoShip:
+    component: "allegro.getCargoShips"  
+    properties:
+      cargoShips: "cargoShips"
+    transitions:
+      actions: 
+        success: "successCargoShipState"
+        failure: "failureCargoShipState"
+
+  successCargoShipState:
+    component: "System.CommonResponse"
+    properties:
+      nlpResultVariable: "iResult"
+      cancelPolicy: "immediate"
+      transitionAfterMatch: "false"
+      processUserMessage: true
+      translate: true
+      metadata:
+        responseItems:
+          - type: "text"
+            text: "Here is found CargoShip list."
+          - type: "cards"
+            cardLayout: "vertical"
+            cards:
+              - title: "Ship Name: ${cargoShips.ship}"
+                description: |-
+                  Type: ${cargoShips.type}
+                  Weight : ${cargoShips.weight.size} ${cargoShips.weight.standard}
+                  Average speed : ${cargoShips.fuel.averagespeed}
+                name: "${cargoShips.ship}"
+                iteratorVariable: "cargoShips"
+                rangeStart:
+                rangeSize:
+                actions:
+                - label: "Details"
+                  type: "postback"
+                  payload:
+                    action: "selecCargoShipDetail"
+                    variables:
+                      cargoShip: "${cargoShips.ship}"
+        globalActions:     
+          - label: "Cancel"
+            type: "postback"
+            payload:
+              action: "cancel"
+    transitions:
+      actions:
+        cancel: "goMain"
+        selecCargoShipDetail: "selectCargoShipDetail"
+
+# 
+  selectCargoShipDetail:
+    component: "allegro.getCargoShip"  
+    properties:
+      cargoShipInfo: "cargoShipInfo"
+      cargoShip: "${cargoShip.value}"
+    transitions:
+      actions: 
+        success: "successCargoShipDetailState"
+        failure: "failureCargoShipDetailState"
+
+  failureCargoShipDetailState:
+    component: "System.Output"
+    properties:
+      text: "Can't find CargoShip."
+      keepTurn: false
+    transitions:
+      return: "done"
+      
+
+  successCargoShipDetailState:
+    component: "System.CommonResponse"
+    properties:
+      processUserMessage: true
+      translate: true
+      metadata:
+        responseItems:
+          - type: "text"
+            text: |-
+                  Ship Name: ${cargoShipInfo.value.ship}
+                  Type: ${cargoShipInfo.value.type}
+                  Weight : ${cargoShipInfo.value.weight.size} ${cargoShipInfo.value.weight.standard}
+                  Average speed : ${cargoShipInfo.value.fuel.averagespeed}
+                  Miles per Gallon : ${cargoShipInfo.value.fuel.milespergallon}
+                  Fully Loaded speed : ${cargoShipInfo.value.fuel.fullyloaded}
+                  Average capacity : ${cargoShipInfo.value.capacity.average}
+                  Combined capacity : ${cargoShipInfo.value.capacity.average}
+            channelCustomProperties:
+            - channel: "slack"
+              properties:
+                renderActionsAsDropDown: false
+            actions: 
+              - label: "Delete"
+                type: "postback"
+                payload:
+                  action: "goDelete"
+                  variables:
+                      cargoShip: "${cargoShipInfo.value.ship}"
+                name: "Delete Ship"           
+              - label: "Back to main"
+                type: "postback"
+                payload:
+                  action: "Back"
+                name: "Back"            
+    transitions:
+      actions:
+        goDelete: "goDelete"
+        Back: "goMain"
+
+  goDelete:
+    component: "allegro.deleteCargoShip"  
+    properties:
+      answerInfo: "answerInfo"
+      cargoShip: "${cargoShipInfo.value.ship}"
+    transitions:
+      actions: 
+        success: "successDeleteShip"
+        failure: "failureDeleteShip"
+
+  successDeleteShip:
+    component: "System.Output"
+    properties:
+      translate: false
+      text: |-
+            Success delete
+    transitions:
+      return: "done"
+
+  failureDeleteShip:
+    component: "System.Output"
+    properties:
+      translate: false
+      text: |-
+            Fail to process
+            Error Code : ${answerInfo.value.code}
+            message : ${answerInfo.value.message}
+    transitions:
+      return: "done"
