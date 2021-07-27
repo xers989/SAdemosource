@@ -165,7 +165,7 @@ Revise the oke-deployment.yaml about image address and secret information
 image: <<your docker registry>>/***/allegro/allegro:1.0
 create your scret to access docker registry by kubectl command.   
 ```bash
-$ kubectl create secret docker-registry mysecret --docker-server=<your docker registry> --docker-username='<docker registry user>' --docker-password='<o\auth-token>' --docker-email='<email-address>'
+$ kubectl create secret docker-registry mysecret --docker-server=<your docker registry> --docker-username='<docker registry user>' --docker-password='<password>' --docker-email='<email-address>'
 ```
 
 You can create resource by oke-deployment.yaml.   
@@ -173,4 +173,4 @@ You can create resource by oke-deployment.yaml.
 $ kubectl apply -f oke-deployment.yaml
 ```
 Here is the running architecture in Kubernetes.
-<img src="/images/allegro-saas/image4.png" width="70%" height="70%">  
+<img src="/images/allegro-saas/image4.png" width="90%" height="90%">  
