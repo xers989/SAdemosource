@@ -17,6 +17,20 @@ If you login with Hanjin, you can retrieve Hanjin's ship information.
 Click edit button on ship information, then you can see there is capacity information.   
 <img src="/images/image6.png" width="80%" height="80%">   
 
+This web application provides edit and delete action, you can do click icon in Actions column. 
+<img src="/images/image6.png" width="80%" height="80%">   
+
+If you  click New button, you can create new ship information.
+<img src="/images/image7.png" width="80%" height="80%">   
+Each tenants can manage their own ship's properties.
+
+MongoDB also provides aggregation features like RDBMS (group or having).   
+Aggregation of Size, Speeed and Miles per gallon is implemented, making a group in your tenant and calculate sum and averge.
+Click button on top.
+<img src="/images/image8.png" width="80%" height="80%"> 
+
+
+
 ## One source multi use Demo
 This is chatbot demo which is used Oracle Digital Assistant and Slack.   
 Chatbot is working with existing middleware (API server - node_server)  
