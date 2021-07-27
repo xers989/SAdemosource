@@ -2,7 +2,7 @@
 
 ### Feature and components
 This API server is running on NodeJS and it provides CRUD function on document database.    
-Therefore, NodeJS and document database are required to run this API Server. There is option to use document database, You can choose MongoDB on-premise or Atlas MongoDB. In this demo I will use Atlas MongoDB that is managed database cloud service. So, it is easy to provision database instance.    
+Therefore, NodeJS and document database are required to run this API Server. There is option to use document database, You can choose MongoDB on-premise or Atlas MongoDB. In this demo I'm going to use Atlas MongoDB that is fully managed database cloud service. So, it is easy to provision database instance.    
 Here is how to provision the Atlas MongoDB   
 https://www.mongodb.com/cloud/atlas/register   
 
@@ -10,12 +10,14 @@ https://www.mongodb.com/cloud/atlas/register
 In terms of NodeJS, you can download from nodejs site.    
 https://nodejs.org/en/download/    
 I recommend using the latest version (+14.17.0). If you install NodeJS, npm (Node Package Manager) is also included in the package.   
-The API server doesn't have authentication and authorization feature to protect API. If you want to protect the API end-point, API gateway can be deployed in front of the API-server.  
+This tme authentication and authorization is not implemented in API server feature to protect API. If you want to protect the API end-point, API gateway can be deployed in front of the API-server.  
 
 ### Atlas MongoDB
 If you have Atlas account, you can create MongoDB cluster.   
-Login to Atlas web console and create cluster (You can create 2 clusters for free)   
-After creation of cluster, you can get the connection link.   
+Following is useful link to understand Atlas.    
+https://docs.atlas.mongodb.com/getting-started/    
+
+Login to Atlas web console and create database, after creation, you can get the connection link.   
 <img src="/images/allegro-node/image3.png" width="50%" height="50%">    
 
 Choose a connection method.   
