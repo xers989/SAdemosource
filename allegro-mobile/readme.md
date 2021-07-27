@@ -115,9 +115,10 @@ success Successfully launched the app on the simulator
 
 In few minutes, mobile simulator will be launched.   
 Login with your user id and password.    
-<img src="/images/allegro-mobile/image19.png" width="40%" height="40%">    
+<img src="/images/allegro-mobile/image19.png" width="30%" height="30%">    
 
 Select Hanjin as tenant.    
-<img src="/images/allegro-mobile/image20.png" width="90%" height="90%">
+<img src="/images/allegro-mobile/image20.png" width="30%" height="30%">    
+
 And then you can see your container information that you created before.   
-<img src="/images/allegro-mobile/image21.png" width="90%" height="90%">
+<img src="/images/allegro-mobile/image21.png" width="30%" height="30%">    
