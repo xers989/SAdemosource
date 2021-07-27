@@ -253,17 +253,4 @@ Launching slack with your ID, there is allegro-bot is on Apps.
 Click the application to start converstion, then type what you want to know about cargoship.   
 Type "Hi I'm wondering about cargoship list.", then allegro-bot will answer the question.   
 The cargoship information is list value, so it is displayed vertical card type.   
-<img src="/images/allegro-bot/image30.png" width="50%" height="50%">       
-
-Click details of what you want to see in the ship list.   
-Then you can see detail information of the selected ship.   
-<img src="/images/allegro-bot/image31.png" width="50%" height="50%">       
-
-If you want to delete the ship information, click delete button.   
-<img src="/images/allegro-bot/image32.png" width="50%" height="50%">       
-
-
-Then, type again to retrieve the cargoship list.    
-Type "Cargo ship list, please"   
-The selected ship information is not in the result.   
-<img src="/images/allegro-bot/image33.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image30.png" width="70%" height="70%">      

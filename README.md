@@ -60,4 +60,6 @@ If you want to delete the ship information, click delete button.
 Then, type again to retrieve the cargoship list.    
 Type "Cargo ship list, please"   
 The selected ship information is not in the result.   
-<img src="/images/allegro-bot/image33.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image33.png" width="70%" height="70%">       
+
+Click Cancel button to stop conversation.
