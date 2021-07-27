@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: allegro-saas
-        image: iad.ocir.io/apackrsct01/allegro/allegro-saas:latest
+        image: iad.ocir.io/apackrsct01/allegro/allegro:1.0
         imagePullPolicy: Always
         ports:
         - name: http

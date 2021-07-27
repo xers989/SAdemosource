@@ -4,7 +4,7 @@ WORKDIR /app
 # Copy All files into /app directory
 COPY package*.json ./
 # Running npm install
-RUN npm install --production
+RUN npm install
 # RUN npm install --save vue-chartjs
 COPY . .
 RUN npm run build
