@@ -19,37 +19,37 @@ After creation of cluster, you can get the connection link.
 <img src="/images/allegro-node/image3.png" width="50%" height="50%">    
 
 Choose a connection method.   
-<img src="/images/allegro-node/image4.png" width="50%" height="50%">       
+<img src="/images/allegro-node/image4.png" width="80%" height="80%">       
 
 Now you can connection URL, so copy the address and close the window.   
-<img src="/images/allegro-node/image5.png" width="50%" height="50%">      
+<img src="/images/allegro-node/image5.png" width="80%" height="80%">      
 
 ### Atlas Access
 To create database user, go to atlas console page and click Database Access.   
 Click + Add new database user.   
-<img src="/images/allegro-node/image6.png" width="50%" height="50%">      
+<img src="/images/allegro-node/image6.png" width="80%" height="80%">      
 Select Password as Authentication Method, and then set up the password.   
 User Privileges is need to read and write to any database.   
 
 
 To connect the database, you have to also add IP address in Network Access.   
 Click Network Access and add IP Address.   
-<img src="/images/allegro-node/image7.png" width="50%" height="50%">     
+<img src="/images/allegro-node/image7.png" width="80%" height="80%">     
 You have to add the server IP address (allegro-node server IP address).   
 This is not private IP, if you don't know your public IP address, open google and type "my ip".   
 Type the IP address on Access List Entry. You can use CIDR format.   
-<img src="/images/allegro-node/image8.png" width="50%" height="50%">     
+<img src="/images/allegro-node/image8.png" width="60%" height="60%">     
 
 
 ### Create Database and Insert Sample Data on collection
 Log in to Atlas console and create database.   
 To create Database, click Databases and click + Create Database.   
-<img src="/images/allegro-node/image9.png" width="50%" height="50%">      
+<img src="/images/allegro-node/image9.png" width="40%" height="40%">      
 
 Next is create collection in the database.   
 Select the database you created, click "+" button on the database.   
 Set Collection name as ship.   
-<img src="/images/allegro-node/image10.png" width="50%" height="50%">      
+<img src="/images/allegro-node/image10.png" width="40%" height="40%">      
 
 Insert sample Document   
 There are two tenant Hanjin and HMM.  
@@ -147,7 +147,7 @@ Launch Postman and type following address and then click send button to get info
 http://localhost:3002/cargoship/Hanjin  
 That is enquery ship information belongs to Hanjin.   
 
-<img src="/images/allegro-node/image12.png" width="50%" height="50%">     
+<img src="/images/allegro-node/image12.png" width="80%" height="80%">     
 
 Here is curl string to test in Linux OS.   
 ```bash
@@ -223,7 +223,7 @@ Running the node server in backgroud
 ```bash
 allegro-node $ pm2 --name <<background-process name>> start npm -- <<npm script>>
 ```
-<img src="/images/allegro-node/image13.png" width="50%" height="50%">    
+<img src="/images/allegro-node/image13.png" width="100%" height="100%">    
 
 You can search the process by 
 ```bash
