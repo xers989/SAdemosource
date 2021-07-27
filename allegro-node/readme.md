@@ -17,7 +17,7 @@ If you have Atlas account, you can create MongoDB cluster.
 Login to Atlas web console and create cluster (You can create 2 clusters for free)   
 After creation of cluster, you can get the connection link.   
 ![Atlas Connection](/images/allegro-node/image3.png)   
-
+<img src="/images/allegro-node/image3.png" width="80%" height="80%">    
 
 Choose a connection method.   
 ![Atlas Connection](/images/allegro-node/image4.png)    
