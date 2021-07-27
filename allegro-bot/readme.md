@@ -152,7 +152,7 @@ Click preview and type question.
 
 In chatting text box, type "Hi, I'm wondering my cargoship list" and enter.   
 Then chatbot will respond your question.   
-<img src="/images/allegro-bot/image11.png" width="60%" height="60%">       
+<img src="/images/allegro-bot/image11.png" width="70%" height="70%">       
 If chatbot returns Hanjin tenant cargoship list, it works properly.'  
 
 
@@ -166,14 +166,14 @@ https://slack.com/create#email
 In the slack, go to the slack api page with your account.   
 https://api.slack.com/apps   
 
-Click create app button   
-<img src="/images/allegro-bot/image12.png" width="50%" height="50%">        
+Click create app button.   
+<img src="/images/allegro-bot/image12.png" width="70%" height="70%">        
 
 Choose From scratch and type name of the chat-bot   
-<img src="/images/allegro-bot/image13.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image13.png" width="40%" height="40%">        
 
 Appname as allegro (if you have preferred name you can use) and pick a workspace name.   
-<img src="/images/allegro-bot/image14.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image14.png" width="40%" height="40%">       
 
 When it is created, the page is forward to basic information of the building Apps. On left menu select OAuth and Permissions.   
 There is Scopes section and input following information.   
@@ -194,7 +194,7 @@ files: write
 Go to OAuth Tokens for Your Workspace section, there is intall to workspace button.   
 <img src="/images/allegro-bot/image16.png" width="50%" height="50%">       
 Click Allow button    
-<img src="/images/allegro-bot/image17.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image17.png" width="40%" height="40%">        
 
 After creation process, You can get credential information App Credential section from Basic information.   
 <img src="/images/allegro-bot/image18.png" width="50%" height="50%">       
@@ -245,7 +245,7 @@ Go to Manage Distribution menu on left, there is add slack button. Click the but
 <img src="/images/allegro-bot/image27.png" width="50%" height="50%">       
 
 Click Allow button to complete the task.   
-<img src="/images/allegro-bot/image28.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image28.png" width="40%" height="40%">       
 
 
 ### Test ChatBot
