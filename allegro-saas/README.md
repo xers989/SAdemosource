@@ -16,7 +16,8 @@ API server address is in main.js file.
 ```javascript
 axios.defaults.baseURL = 'http://terraform.cloudiam.site:3002'
 ```
-Replace the baseURL as your allegro-node IP address.  
+Replace the baseURL as your allegro-node IP address.
+There are two main pages (main, SingIn), and the code are in src/components folder.   
 
 ```bash
 allegro-saa $ tree               
