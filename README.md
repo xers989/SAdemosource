@@ -67,9 +67,9 @@ Click Cancel button to stop conversation.
 
 ## Synchronize data in mobile demo
 In Atlas, there is mobile backend service. It provides synchronize data between mobile and Atlas. (It provides also functions, triggers and etc for mobile application)    
-Using mobile application in business is increasing, however due to it doesn't have enough data space and sometimes go through bad quality connection.   
+Using mobile application in business is increased, however it doesn't have enough data space and low connection, we sometimes have difficulties to use it.   
 The realm is providing mobile database for mobile application. So, you can store data in the database that you need to save space. Also, auto synchronization between origin data in Atlas and mobile database.  
-Here is story, when cargo ship arrives habor, many containers are unloaded into the habor. Employees in the habor needs to verify the position of the containers. Allegro-mobile is providing features that the position data is uploaded into Atlas container collection.   
+Here is story, when cargo ship arrives harbor, many containers are unloaded into yard in the harbor. Employees in the habor needs to verify the position of the containers. Allegro-mobile is providing features that the position data is uploaded into Atlas container collection.   
 <img src="/images/allegro-mobile/image1.png" width="90%" height="90%">    
 
 ### Demo Scenario
@@ -87,7 +87,7 @@ You can add container position data. click "+" button and type container number 
 <img src="/images/image12.png" width="30%" height="30%">   
 
 Then you can see the data is saved properly. To check Atlas container collection, go Atlas console and click "Browse Collections".   
-<img src="/images/image13.png" width="70%" height="70%">   
+<img src="/images/image13.png" width="80%" height="80%">   
 
 Now, turn off Laptop internet connection. And try again create container information.   
 <img src="/images/image14.png" width="30%" height="30%">   
@@ -96,4 +96,4 @@ The data is saved in allegro mobile application.
 <img src="/images/image15.png" width="30%" height="30%">   
 
 Now, turn on the internet connection and check the data in Atlas container collection.
-<img src="/images/image16.png" width="60%" height="60%">   
+<img src="/images/image16.png" width="70%" height="70%">   
