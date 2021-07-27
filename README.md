@@ -63,3 +63,17 @@ The selected ship information is not in the result.
 <img src="/images/allegro-bot/image33.png" width="70%" height="70%">       
 
 Click Cancel button to stop conversation.
+
+
+## Synchronize data in mobile demo
+In Atlas, there is mobile backend service. It provides synchronize data between mobile and Atlas. (It provides also functions, triggers and etc for mobile application)    
+Using mobile application in business is increasing, however due to it doesn't have enough data space and sometimes go through bad quality connection.   
+The realm is providing mobile database for mobile application. So, you can store data in the database that you need to save space. Also, auto synchronization between origin data in Atlas and mobile database.  
+Here is story, when cargo ship arrives habor, many containers are unloaded into the habor. Employees in the habor needs to verify the position of the containers. Allegro-mobile is providing features that the position data is uploaded into Atlas container collection.   
+<img src="/images/allegro-mobile/image1.png" width="90%" height="90%">    
+
+### Demo Scenario
+#### Tenant Concept
+It has tenancy concept, there are two tenant ("HMM", "Hanjin"). This application is providing management of cargoship. So, each tenant can save their own cargoship information.  
+HMM manages their ship information with weight and fuel, also Hanjin manages ship with weight, fuel, and capacity.   
+<img src="/images/image3.png" width="90%" height="90%">     
