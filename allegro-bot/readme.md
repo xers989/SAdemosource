@@ -13,12 +13,14 @@ Login to Oracle Cloud console and click Digital Assistant (Home > Analytics & AI
 <img src="/images/allegro-bot/image1.png" width="70%" height="70%">       
 Click Create Digital Assistant Instance, type name what you want and select shape as development    
 <img src="/images/allegro-bot/image2.png" width="50%" height="50%">       
-It takes several minutes to provision digital assistant, After provisioning you can click the digital assistant to open digital assitant console.   
+It takes several minutes to provision digital assistant, After provisioning you can click the digital assistant to open digital assistant console.   
 <img src="/images/allegro-bot/image3.png" width="60%" height="60%">       
 
 ### Create Skill and Intents
-In digital assistant console, select skills under Development > Skills.    
-And Create new Skill, then type the name of it (allegro)    
+If you click the assistant console, you can enter following page.   
+<img src="/images/allegro-bot/image34.png" width="80%" height="80%">   
+To create Skill, select skills under Development > Skills.    
+And then create new Skill. To finish creating type the name of it (allegro), about other columns leave with default value.      
 <img src="/images/allegro-bot/image4.png" width="50%" height="50%">        
 Skills are designed to interact with users and fulfill specific types of tasks, in this demo search ship and delete ship. Each skill helps a user complete a task through a combination of text messages and simple UI elements.   
 Now you need to add intents in the skill, click add 2 intents.    
