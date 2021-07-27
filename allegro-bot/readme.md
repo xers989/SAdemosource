@@ -12,7 +12,7 @@ Digital Assistant is kind of chatbot platform, if you want to use another chatbo
 Login to Oracle Cloud console and click Digital Assistant (Home > Analytics & AI > Digital Assistant)   
 <img src="/images/allegro-bot/image1.png" width="70%" height="70%">       
 Click Create Digital Assistant Instance, type name what you want and select shape as development    
-<img src="/images/allegro-bot/image2.png" width="70%" height="70%">       
+<img src="/images/allegro-bot/image2.png" width="50%" height="50%">       
 It takes several minutes to provision digital assistant, After provisioning you can click the digital assistant to open digital assitant console.   
 <img src="/images/allegro-bot/image3.png" width="60%" height="60%">       
 
