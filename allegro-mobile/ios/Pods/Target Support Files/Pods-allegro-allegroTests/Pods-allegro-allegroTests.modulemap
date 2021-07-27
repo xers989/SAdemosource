@@ -1,0 +1,6 @@
+module Pods_allegro_allegroTests {
+  umbrella header "Pods-allegro-allegroTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
