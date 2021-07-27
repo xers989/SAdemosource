@@ -19,11 +19,11 @@ It takes several minutes to provision digital assistant, After provisioning you 
 ### Create Skill and Intents
 If you click the assistant console, you can enter following page.   
 <img src="/images/allegro-bot/image34.png" width="80%" height="80%">   
-To create Skill, select skills under Development > Skills.    
+To create Skill, click menu button on top, and select skills under Development > Skills.    
 And then create new Skill. To finish creating type the name of it (allegro), about other columns leave with default value.      
 <img src="/images/allegro-bot/image4.png" width="50%" height="50%">        
 Skills are designed to interact with users and fulfill specific types of tasks, in this demo search ship and delete ship. Each skill helps a user complete a task through a combination of text messages and simple UI elements.   
-Now you need to add intents in the skill, click add 2 intents.    
+Now you need to add intents in the skill, click add 2 intents. (Don't change the intent name, it is used in flow definition)    
 
 ```text
 ChargoShip intent
@@ -48,18 +48,18 @@ I have to delete the cargo ship
 This is need to be delete
 ```
 
-<img src="/images/allegro-bot/image5.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image5.png" width="70%" height="70%">       
 
-When user conversates, the chatbot detect user's intennt by Utterances.   
-For example, if you types "I wonders about my cargoship list", digital assistant recognizes your tentant as CargoShip and proceed the conversation.   
+When user starts conversation with bot, it detects user's intent by Utterances.   
+For example, if you types "I wonders about my cargoship list", the bot recognizes your tentant as CargoShip and proceed the conversation.   
 
-After type all information, you need to train the skill. Then digital bot can recognize your intent.    
-<img src="/images/allegro-bot/image6.png" width="50%" height="50%">       
+After inputing all information, you need to train the skill. Then digital bot can recognize users' intent.    
+<img src="/images/allegro-bot/image6.png" width="60%" height="60%">       
 If chatbot can't detect your intention, type the sample utterance in the right skill and then train again.    
 
 ### Flow Definition
 Now you need to define conversation flow.   
-Click flow Editor and copy flow file (allegro-flow.txt).   
+Click flow Editor and delete full text and paste from flow file(allegro-flow.txt).   
 <img src="/images/allegro-bot/image7.png" width="50%" height="50%">       
 
 ### Adding External Service
@@ -91,7 +91,7 @@ the reqURL sets up that URL.
 ```javascript 
 var reqURL="http://terraform.cloudiam.site:3002/cargoship/Hanjin";
 ```
-Replace the domain name as your IP address of allegro-nod API Server in allegrobackend.js, deleteCargoShip.js, getCargoShip.js.    
+Replace the domain name as your IP address of allegro-node API Server in allegrobackend.js, deleteCargoShip.js, getCargoShip.js.    
 
 Goto digitalAssistant directory and package the project by following.   
 ```bash
@@ -137,43 +137,43 @@ allegro-backend-1.0.0.tgz
 Go to digital assistant console and select skill what you created.   
 There is components menu on left side menu, and click add service.   
 
-<img src="/images/allegro-bot/image8.png" width="50%" height="50%">      
+<img src="/images/allegro-bot/image8.png" width="60%" height="60%">      
 
 After finising add service. You can see 3 services are add in one project. Final task is turn-on service enabled.   
 
-<img src="/images/allegro-bot/image9.png" width="50%" height="50%">      
+<img src="/images/allegro-bot/image9.png" width="60%" height="60%">      
 
 
 
 ### Testing chatting service in Skill
 Now you can test the digital bot, there is Preview button on top menu.   
 Click preview and type question.   
-<img src="/images/allegro-bot/image10.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image10.png" width="60%" height="60%">       
 
 In chatting text box, type "Hi, I'm wondering my cargoship list" and enter.   
 Then chatbot will respond your question.   
-<img src="/images/allegro-bot/image11.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image11.png" width="60%" height="60%">       
 If chatbot returns Hanjin tenant cargoship list, it works properly.'  
 
 
 
 ### Create Slack Application
-Final task is adding conversation channel, channel can be slack, facebook messenger or MS teams.   
+Final task is adding conversation channel. Channel can be slack, facebook messenger or MS teams.   
 Here is the way to connect slack, to complete this task you need to have administration role of the slack.   
-If you want to create new slack workspace, here is link to do that.   
+If you want to create new slack workspace, here is link to make new.   
 https://slack.com/create#email   
 
-In the slack, visit the slack api page with your account.   
+In the slack, go to the slack api page with your account.   
 https://api.slack.com/apps   
 
 Click create app button   
-![Atlas Connection](/images/allegro-bot/image12.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image12.png" width="50%" height="50%">        
 
 Choose From scratch and type name of the chat-bot   
-![Atlas Connection](/images/allegro-bot/image13.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image13.png" width="50%" height="50%">        
 
 Appname as allegro (if you have preferred name you can use) and pick a workspace name.   
-![Atlas Connection](/images/allegro-bot/image14.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image14.png" width="50%" height="50%">       
 
 When it is created, the page is forward to basic information of the building Apps. On left menu select OAuth and Permissions.   
 There is Scopes section and input following information.   
@@ -189,45 +189,45 @@ users:read
 User Token Scopes
 files: write
 ```
-![Atlas Connection](/images/allegro-bot/image15.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image15.png" width="50%" height="50%">       
 
 Go to OAuth Tokens for Your Workspace section, there is intall to workspace button.   
-![Atlas Connection](/images/allegro-bot/image16.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image16.png" width="50%" height="50%">       
 Click Allow button    
-![Atlas Connection](/images/allegro-bot/image17.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image17.png" width="50%" height="50%">        
 
 After creation process, You can get credential information App Credential section from Basic information.   
-![Atlas Connection](/images/allegro-bot/image18.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image18.png" width="50%" height="50%">       
 
 
 ### Create Slack Channel
 Login into Digital Assitant and Channels under Develoment menu.   
-![Atlas Connection](/images/allegro-bot/image19.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image19.png" width="50%" height="50%">       
 
 Select Add Channel button and type slackAllegro as name and pick slack as Channel Type.   
 And then copy client ID and Client Secret from slack.   
-![Atlas Connection](/images/allegro-bot/image20.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image20.png" width="50%" height="50%">       
 
 After create the channel enable the Channel Enabled and select Route To as skill what you created.    
-![Atlas Connection](/images/allegro-bot/image21.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image21.png" width="50%" height="50%">       
 
 
 ### Paste Redirect and complete the config
 Then copy the Webhook URL in the page and paste it Redirect URLs section in OAuth & Permission page.   
 The Webhook URL.   
-![Atlas Connection](/images/allegro-bot/image22.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image22.png" width="50%" height="50%">       
 Redirect URL   
-![Atlas Connection](/images/allegro-bot/image23.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image23.png" width="50%" height="50%">        
 Then click Save URLs   
 
 In the left menu, there is App Home and Your App's Presence in Slack section, turn on Always Show My Bot as Online.   
-![Atlas Connection](/images/allegro-bot/image24.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image24.png" width="50%" height="50%">       
 
 Also, you need to turn on Message tab in Show section and check "Allow users to send Slash commands and messages from the messages tab"    
-![Atlas Connection](/images/allegro-bot/image29.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image29.png" width="50%" height="50%">       
 
 Select Event Subscriptions in left menu, set Enable Events to ON and paste Web Hook URL on Request URL field.   
-![Atlas Connection](/images/allegro-bot/image25.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image25.png" width="50%" height="50%">       
 
 Expand subscribe to bot events and click add a bot user.   
 Click Add bot user event and add following event.  
@@ -239,13 +239,13 @@ message.mpim
 message.channels
 ```
 
-![Atlas Connection](/images/allegro-bot/image26.png" width="50%" height="50%">        
+<img src="/images/allegro-bot/image26.png" width="50%" height="50%">        
 
 Go to Manage Distribution menu on left, there is add slack button. Click the button.  
-![Atlas Connection](/images/allegro-bot/image27.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image27.png" width="50%" height="50%">       
 
 Click Allow button to complete the task.   
-![Atlas Connection](/images/allegro-bot/image28.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image28.png" width="50%" height="50%">       
 
 
 ### Test ChatBot
@@ -253,17 +253,17 @@ Launching slack with your ID, there is allegro-bot is on Apps.
 Click the application to start converstion, then type what you want to know about cargoship.   
 Type "Hi I'm wondering about cargoship list.", then allegro-bot will answer the question.   
 The cargoship information is list value, so it is displayed vertical card type.   
-![Atlas Connection](/images/allegro-bot/image30.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image30.png" width="50%" height="50%">       
 
 Click details of what you want to see in the ship list.   
 Then you can see detail information of the selected ship.   
-![Atlas Connection](/images/allegro-bot/image31.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image31.png" width="50%" height="50%">       
 
 If you want to delete the ship information, click delete button.   
-![Atlas Connection](/images/allegro-bot/image32.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image32.png" width="50%" height="50%">       
 
 
 Then, type again to retrieve the cargoship list.    
 Type "Cargo ship list, please"   
 The selected ship information is not in the result.   
-![Atlas Connection](/images/allegro-bot/image33.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image33.png" width="50%" height="50%">       
