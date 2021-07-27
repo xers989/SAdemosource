@@ -77,8 +77,8 @@ Here is story, when cargo ship arrives habor, many containers are unloaded into 
 Login in into your Allegro mobile application with your Realm User Id. (It stores login session, so if you logged in before, the login procedure will skip)   
 <img src="/images/image9.png" width="30%" height="30%">     
 
-Select tenant "Hanjin"
-<img src="/images/image10.png" width="30%" height="30%">  
+Select tenant "Hanjin".    
+<img src="/images/image10.png" width="30%" height="30%">   
 
 Then, you can see stored container list from container collection.   
 <img src="/images/image11.png" width="30%" height="30%">   
@@ -87,13 +87,13 @@ You can add container position data. click "+" button and type container number 
 <img src="/images/image12.png" width="30%" height="30%">   
 
 Then you can see the data is saved properly. To check Atlas container collection, go Atlas console and click "Browse Collections".   
-<img src="/images/image13.png" width="30%" height="30%">   
+<img src="/images/image13.png" width="70%" height="70%">   
 
-Now, turn off Laptop internet connection. And try again create container information.
+Now, turn off Laptop internet connection. And try again create container information.   
 <img src="/images/image14.png" width="30%" height="30%">   
 
-The data is saved in allegro mobile application.    
+The data is saved in allegro mobile application.     
 <img src="/images/image15.png" width="30%" height="30%">   
 
 Now, turn on the internet connection and check the data in Atlas container collection.
-<img src="/images/image16.png" width="30%" height="30%">   
+<img src="/images/image16.png" width="60%" height="60%">   
