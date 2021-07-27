@@ -41,21 +41,21 @@ Chatbot source is on Allegro-bot
 Integration source between chatbot and API server is in digitalAssistant   
 <img src="/images/image2.png" width="90%" height="90%">    
 
-
-### Test ChatBot
-Launching slack with your ID, there is allegro-bot is on Apps.   
-Click the application to start converstion, then type what you want to know about cargoship.   
-Type "Hi I'm wondering about cargoship list.", then allegro-bot will answer the question.   
+### Luanching Slack
+Launching Slack with your ID, and you can see allegro-bot is on Apps category.   
+Click allegro-bot and start converstion, type what you want to know about cargo ship.  
+The question has to include "cargo" and the intension would be wondering about cargo ship list.
+For example "I'm wondering about cargoship list." is good. 
+If the bot recognize your intension,then it will answer the question.(Bot is AI based and it doesn't recognize too complicated question.)   
 The cargoship information is list value, so it is displayed vertical card type.   
-<img src="/images/allegro-bot/image30.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image30.png" width="70%" height="70%">       
 
 Click details of what you want to see in the ship list.   
 Then you can see detail information of the selected ship.   
-<img src="/images/allegro-bot/image31.png" width="50%" height="50%">       
+<img src="/images/allegro-bot/image31.png" width="70%" height="70%">       
 
 If you want to delete the ship information, click delete button.   
-<img src="/images/allegro-bot/image32.png" width="50%" height="50%">       
-
+<img src="/images/allegro-bot/image32.png" width="70%" height="70%">       
 
 Then, type again to retrieve the cargoship list.    
 Type "Cargo ship list, please"   
