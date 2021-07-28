@@ -1,6 +1,6 @@
 # MongoDB Demo
 
-## SaaS Application Demo
+## 1. SaaS Application Demo
 Allegro demo is consist of middleware and web UI.   
 Middleware (API server) is running on NodeJS with mongoose modules (Allegro-node)   
 Web UI is based on Vue.js (Allegro-saas)   
@@ -34,14 +34,15 @@ Aggregation of Size, Speeed and Miles per gallon is implemented, making a group 
 Click button on top.
 <img src="/images/image8.png" width="80%" height="80%"> 
 
-## One source multi use Demo
+## 2. One source multi use Demo
 This is chatbot demo which is used Oracle Digital Assistant and Slack.   
 Chatbot is working with existing middleware (API server - node_server)  
 Chatbot source is on Allegro-bot   
 Integration source between chatbot and API server is in digitalAssistant   
 <img src="/images/image2.png" width="90%" height="90%">    
 
-### Luanching Slack
+### Demo Scenario
+#### Luanching Slack
 Launching Slack with your ID, and you can see allegro-bot is on Apps category.   
 Click allegro-bot and start converstion, type what you want to know about cargo ship.  
 The question has to include "cargo" and the intension would be wondering about cargo ship list.
@@ -65,7 +66,7 @@ The selected ship information is not in the result.
 Click Cancel button to stop conversation.
 
 
-## Synchronize data in mobile demo
+## 3. Synchronize data in mobile demo
 In Atlas, there is mobile backend service. It provides synchronize data between mobile and Atlas. (It provides also functions, triggers and etc for mobile application)    
 Using mobile application in business is increased, however it doesn't have enough data space and low connection, we sometimes have difficulties to use it.   
 The realm is providing mobile database for mobile application. So, you can store data in the database that you need to save space. Also, auto synchronization between origin data in Atlas and mobile database.  
