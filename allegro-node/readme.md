@@ -222,18 +222,18 @@ Here is install command.
 allegro-node $ sudo npm install pm2 -g
 ```
 
-Running the node server in backgroud   
+Running the node server in backgroud.   
 ```bash
 allegro-node $ pm2 --name <<background-process name>> start npm -- <<npm script>>
 ```
 <img src="/images/allegro-node/image13.png" width="100%" height="100%">    
 
-You can search the process by 
+You can search the process by ps option.    
 ```bash
 $ pm2 ps
 ```
 
-Also to stop the process by
+Also to stop the process by delete option.   
 ```bash
 $ pm2 delete <<id>>
 ```
