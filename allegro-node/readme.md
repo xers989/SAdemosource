@@ -1,13 +1,13 @@
 ## Allegro Web application API Server
 
 ### Feature and components
-This API server is running on NodeJS and it provides CRUD function on document database.    
-Therefore, NodeJS and document database are required to run this API Server. There is option to use document database, You can choose MongoDB on-premise or Atlas MongoDB. In this demo I'm going to use Atlas MongoDB that is fully managed database cloud service. So, it is easy to provision database instance.    
+This API server is running on Nodejs and it provides CRUD function on document database.    
+Therefore, Nodejs and document database are required to run this API Server. There is option to use document database, You can choose MongoDB on-premise or Atlas MongoDB. In this demo I'm going to use Atlas MongoDB that is fully managed database cloud service. So, it is easy to provision database instance.    
 Here is how to provision the Atlas MongoDB   
 https://www.mongodb.com/cloud/atlas/register   
 
 
-In terms of NodeJS, you can download from nodejs site.    
+In terms of Nodejs, you can download from nodejs site.    
 https://nodejs.org/en/download/    
 I recommend using the latest version (+14.17.0). If you install NodeJS, npm (Node Package Manager) is also included in the package.   
 This tme authentication and authorization is not implemented in API server feature to protect API. If you want to protect the API end-point, API gateway can be deployed in front of the API-server.  
@@ -68,11 +68,8 @@ Select collection ship that you created, and click insert document button.
 {"tenant":"HMM","ship":"HMM-3","type":"Dry bulk carriers","weight":{"size":80000,"standard":"ton"},"fuel":{"averagespeed":30,"milespergallon":830,"fullyloaded":7}}
 ```
 
-### NPM 
-Clone the allegro-node and install modules
-Here is the git URL   
-https://github.com/xers989/SAdemosource.git    
-
+### Allegro-node project 
+Clone the allegro-node and install modules.    
 Here is directoris and files structure. 
 ``` bash
 allegro-node $ tree
@@ -103,6 +100,7 @@ The .env file has to be created under allegro-node directory.
 Don't upload .env file to github. It has password to connect.      
 create file .env    
 You can get all information from your atlas connection string
+
 ``` bash
 allegro-node $ touch .env
 allegro-node $ vi .env
@@ -111,6 +109,7 @@ ATLAS=<<YOUR Atlas connection string>>
 USERID=<<YOUR Atlas DB User>>
 DATABASE=<<YOUR Atlas Database Name>>
 ```
+
 For example if you connection string is mongodb+srv://johndoe:<password>@allegro.abcd.mongodb.net/atlasdatabase?retryWrites=true&w=majority   
 ATLAS is allegro.abcd.mongodb.net   
 DATABASE is atlasdatabase   
@@ -157,7 +156,9 @@ $ curl --location --request GET 'http://localhost:3002/cargoship/Hanjin' \
 --header 'Content-Type: application/json'
 [{"weight":{"size":90000,"standard":"ton"},"fuel":{"averagespeed":25,"milespergallon":560,"fullyloaded":4},"capacity":{"average":22000},"_id":"60e6f72c8e726694c050da27","tenant":"Hanjin","ship":"HJ-1","type":"Container ships"},{"weight":{"size":100000,"standard":"ton"},"fuel":{"averagespeed":23,"milespergallon":480,"fullyloaded":3},"capacity":{"combined":55000,"average":28000},"_id":"60e6f72c8e726694c050da28","tenant":"Hanjin","ship":"HJ-2","type":"Container ships"},{"weight":{"size":150000,"standard":"ton"},"fuel":{"averagespeed":18,"milespergallon":350,"fullyloaded":2.5},"capacity":{"combined":85000,"average":48000},"_id":"60e6f72c8e726694c050da29","tenant":"Hanjin","ship":"HJ-3","type":"Container ships"}]
 ```
+
 All API list is following  
+
 GET /cargoship/:tenant/:ship   
 ship is option   
 
@@ -188,7 +189,7 @@ Sample is
 DELETE /cargoship/:tenant/:ship   
 tenant and ship are mandetory   
 
-PATH  /cargoship/:tenant/:ship   
+PATCH  /cargoship/:tenant/:ship   
 tenant and ship are mandetory   
 Body is json document   
 Sample is  
