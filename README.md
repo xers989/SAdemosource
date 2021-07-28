@@ -1,4 +1,4 @@
-# MongoDB Demo
+# Atlas MongoDB Demo
 
 ## 1. SaaS Application Demo
 Allegro demo is consist of middleware and web UI.   
@@ -7,6 +7,9 @@ Web UI is based on Vue.js (Allegro-saas)
 <img src="/images/image1.png" width="70%" height="70%">    
 
 ### Demo Scenario
+#### Required Project
+To do this demo, you need to deploy allegro-node and allegro-saas projects.   
+
 #### Tenant Concept
 It has tenancy concept, there are two tenant ("HMM", "Hanjin"). This application is providing management of cargoship. So, each tenant can save their own cargoship information.  
 HMM manages their ship information with weight and fuel, also Hanjin manages ship with weight, fuel, and capacity.   
@@ -42,6 +45,9 @@ Integration source between chatbot and API server is in digitalAssistant
 <img src="/images/image2.png" width="90%" height="90%">    
 
 ### Demo Scenario
+#### Required Project
+To do this demo, you need to deploy allegro-node, digitalAssistant and allegro-bot projects.   
+
 #### Luanching Slack
 Launching Slack with your ID, and you can see allegro-bot is on Apps category.   
 Click allegro-bot and start converstion, type what you want to know about cargo ship.  
@@ -74,6 +80,9 @@ Here is story, when cargo ship arrives harbor, many containers are unloaded into
 <img src="/images/allegro-mobile/image1.png" width="90%" height="90%">    
 
 ### Demo Scenario
+#### Required Project
+To do this demo, you need to deploy allegro-mobile project.   
+
 #### Launching Allegro
 Login in into your Allegro mobile application with your Realm User Id. (It stores login session, so if you logged in before, the login procedure will skip)   
 <img src="/images/image9.png" width="30%" height="30%">     
