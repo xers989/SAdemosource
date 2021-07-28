@@ -10,14 +10,8 @@ Here is installation document about Docker.
 https://docs.docker.com/engine/install/   
 
 
-### Set Allegro-node API
+### Allegro-saas project
 This is structure of the project (allegro-saas).    
-API server address is in main.js file.
-```javascript
-axios.defaults.baseURL = 'http://terraform.cloudiam.site:3002'
-```
-Replace the baseURL as your allegro-node IP address.
-There are two main pages (main, SingIn), and the code are in src/components folder.   
 
 ```bash
 allegro-saa $ tree               
@@ -69,6 +63,13 @@ allegro-saa $ tree
 │       └── SignIn.vue
 └── vue.config.js
 ```
+API server address is in main.js file.
+```javascript
+axios.defaults.baseURL = 'http://terraform.cloudiam.site:3002'
+```
+Replace the baseURL as your allegro-node IP address.
+There are two main pages (main, SingIn), and the code are in src/components folder.   
+
 
 ### Docker Image build
 In the project folder, there is dockerfile. So, you can create image by docker build command.    
@@ -130,6 +131,7 @@ nginx               alpine              b9e2356ea1be        2 weeks ago         
 ### Running Container from image
 You can run container from the created imaged by docker run command.      
 After run the container, you can verify the status by docker ps command.   
+
 ``` bash
 $ docker run -d -it -p 8080:8080 allegro:1.0
 faa0a44b9b6f58202a4f91688a6a622081c7186b9c716fe0b78ee10dc45322dc
@@ -140,6 +142,7 @@ faa0a44b9b6f        allegro:1.0         "/docker-entrypoint.…"   About a minut
 
 ### Test Web Application
 The application is using 8080 port. if you want to use other port, change the docker run command. 
+
 ```bash
 $ docker run -d -it -p <<Port>>:8080 allegro:1.0
 ```
@@ -148,9 +151,11 @@ If you access following page, it works properly.
 <img src="/images/allegro-saas/image3.png" width="70%" height="70%">  
 
 
-### Kubernetes
-If you want to run the container in Kubernetes engine. To run it on Kubernetes, you need docker registry, and Kubernetes engine. Also, you have to install kubectl tools on your laptop.   
-Here is image push into docker registry.    
+### Kubernetes (option)
+If you want to run the container in Kubernetes engine, you can deploy it with oke-deployment.yaml.    
+To run it on Kubernetes, you need docker registry, and Kubernetes engine. Also, kubectl is installed in your laptop.   
+First, you need to push image into docker registry. You can use public docker hub or private docker registry.   
+
 ```bash
 $ docker login <<your docker registry>>
 username: ***
@@ -164,11 +169,13 @@ $ docker push <<your docker registry>>/***/allegro/allegro:1.0
 Revise the oke-deployment.yaml about image address and secret information
 image: <<your docker registry>>/***/allegro/allegro:1.0
 create your scret to access docker registry by kubectl command.   
+
 ```bash
 $ kubectl create secret docker-registry mysecret --docker-server=<your docker registry> --docker-username='<docker registry user>' --docker-password='<password>' --docker-email='<email-address>'
 ```
 
-You can create resource by oke-deployment.yaml.   
+You can create resource by oke-deployment.yaml with kubectl tool.   
+
 ```bash
 $ kubectl apply -f oke-deployment.yaml
 ```
