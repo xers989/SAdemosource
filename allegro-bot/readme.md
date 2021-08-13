@@ -214,9 +214,10 @@ After create the channel enable the Channel Enabled and select Route To as skill
 
 ### Paste Redirect and complete the config
 Then copy the Webhook URL in the page and paste it Redirect URLs section in OAuth & Permission page.   
+When you paste the URL, you need to append "/authorizeV2" in the URL.
 The Webhook URL.   
 <img src="/images/allegro-bot/image22.png" width="50%" height="50%">       
-Redirect URL   
+Redirect URL (webhookURL/authorizeV2)   
 <img src="/images/allegro-bot/image23.png" width="50%" height="50%">        
 Then click Save URLs   
 
