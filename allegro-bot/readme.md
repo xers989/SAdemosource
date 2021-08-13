@@ -217,12 +217,15 @@ Then copy the Webhook URL in the page and paste it Redirect URLs section in OAut
 When you paste the URL, you need to append "/authorizeV2" in the URL.
 The Webhook URL.   
 <img src="/images/allegro-bot/image22.png" width="50%" height="50%">       
+
 Redirect URL (webhookURL/authorizeV2)   
 <img src="/images/allegro-bot/image23.png" width="50%" height="50%">        
-Then click Save URLs   
+
+Then click Save URLs.   
+
 Also you have to paste the Webhook URL on Request URL and Options Load URL on Interactivity & Shortcuts.    
 In the page enable interactivity and paste URL on Request URL and Options Load URL (This is in bottom of the page).    
-<img src="/images/allegro-bot/image35.png" width="50%" height="50%">     
+<img src="/images/allegro-bot/image35.png" width="70%" height="70%">     
 
 In the left menu, there is App Home and Your App's Presence in Slack section, turn on Always Show My Bot as Online.   
 <img src="/images/allegro-bot/image24.png" width="50%" height="50%">       
